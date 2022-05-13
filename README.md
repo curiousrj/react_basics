@@ -1,12 +1,12 @@
 # react_basics
-create app -
-npx create-react-app appName
-run app -
-npm start
-
-connecting html to js file -
-root is a html id
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-content
-);
+create app -<br/><br/>
+npx create-react-app appName<br/>
+run app -<br/>
+npm start<br/>
+<br/>
+connecting html to js file -<br/>
+root is a html id<br/>
+const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
+root.render(<br/>
+content<br/>
+);<br/>
