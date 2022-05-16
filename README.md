@@ -18,8 +18,8 @@ large block of html inside parenthesis<br/>
 not support if statement but supports ternary operator<br/>
 const myElement = (<br/>
   <><br/>
-    <p>I am a paragraph.</p><br/>
-    <p>I am a paragraph too.</p><br/>
+    p>I am a paragraph.</p><br/>
+   <p>I am a paragraph too.</p><br/>
   </><br/>
 );<br/>
 <br/>
