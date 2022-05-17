@@ -24,7 +24,7 @@ const myElement = (<br/>
 );<br/>
 <br/>
 components -<br/>
-name start with uppercase<br/>
+file & component name start with uppercase<br/>
 function components -<br/>
 function Car(props) {<br/>
   return h2>I am a {props.color} Car!</h2>;<br/
@@ -32,3 +32,15 @@ function Car(props) {<br/>
 const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
 root.render(<Car color="red"/>);<br/>
 <br/>
+props -<br/>
+can use string, variable or object. even all together<br/>
+<componentName argumentName=string/{variable/object}/><br/>
+<br/>
+react events -
+<button onClick={functionName}>Click Me</button>
+passing argument -
+functionName(argument) => body
+<button onClick={() => functionName(argument)}>Click Me</button>
+react event object -
+functionName(argument) => console.log(argument.type)
+<button onClick={(event) => functionName(event)}>Click Me</button>
