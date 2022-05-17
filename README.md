@@ -81,7 +81,5 @@ function Trees() {<br/>
   return(trees.map((tree) => <Name id={tree.id} name={tree.name}/>));<br/>
 }<br/>
 const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
-root.render(<br/>
-  <Trees /><br/>
-);<br/>
+root.render(<Trees />);<br/>
 <br/>
