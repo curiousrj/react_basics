@@ -57,7 +57,7 @@ function Garage() {<br/>
   const cars = ['Ford', 'BMW', 'Audi'];<br/>
   return (<br/>
     <><br/>
-      <h1>Who lives in my garage?</h1><br/>
+      h1>Who lives in my garage?</h1 <br/>
       <ul><br/>
         {cars.map((car) => <Car brand={car} />)}<br/>
       </ul><br/>
@@ -69,7 +69,7 @@ root.render(<Garage />);<br/>
 <br/>
 list with key -<br/>
 function Name(props) {<br/>
-  return <h1>I am {props.name}</h1><br/>
+  return h1>I am {props.name}</h1 <br/>
 }<br/>
 function Trees() {<br/>
   const trees = [<br/>
