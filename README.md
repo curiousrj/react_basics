@@ -29,7 +29,6 @@ function components -<br/>
 function Car(props) {<br/>
   return h2>I am a {props.color} Car!</h2>;<br/
 }<br/>
-<br/>
 const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
 root.render(<Car color="red"/>);<br/>
 <br/>
