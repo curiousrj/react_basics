@@ -5,10 +5,8 @@ run app -<br/>
 `npm start`<br/>
 <br/>
 render html -<br/>
-`const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
-root.render(<br/>
-content<br/>
-);`<br/>
+`const root = ReactDOM.createRoot(document.getElementById('root'));`<br/>
+`root.render(content);`<br/>
 <br/>
 jsx rules -<br/>
 expressions inside curly bracket<br/>
