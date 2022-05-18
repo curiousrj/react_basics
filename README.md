@@ -51,7 +51,7 @@ if the condition is true the code will execute<br/>
 <br/>
 accessing lists using map function -<br/>
 function Car(props) {<br/>
-  return <li>I am a { props.brand }</li>;<br/>
+  return li>I am a { props.brand }</li ;<br/>
 }<br/>
 function Garage() {<br/>
   const cars = ['Ford', 'BMW', 'Audi'];<br/>
@@ -59,13 +59,13 @@ function Garage() {<br/>
     <><br/>
       h1>Who lives in my garage?</h1 <br/>
       <ul><br/>
-        {cars.map((car) => <Car brand={car} />)}<br/>
+        {cars.map((car) => <Car brand={car} >)}<br/>
       </ul><br/>
     </><br/>
   );<br/>
 }<br/>
 const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
-root.render(<Garage />);<br/>
+root.render(<Garage >);<br/>
 <br/>
 list with key -<br/>
 function Name(props) {<br/>
@@ -81,5 +81,5 @@ function Trees() {<br/>
   return(trees.map((tree) => <Name id={tree.id} name={tree.name}/>));<br/>
 }<br/>
 const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
-root.render(<Trees />);<br/>
+root.render(<Trees >);<br/>
 <br/>
