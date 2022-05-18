@@ -34,10 +34,10 @@ root.render(<Car color="red"/>);<br/>
 <br/>
 props -<br/>
 can use string, variable or object. even all together<br/>
-<componentName argumentName=string/{variable/object}/><br/>
+componentName argumentName=string/{variable/object}/><br/>
 <br/>
 react events -<br/>
-<button onClick={functionName}>Click Me</button><br/>
+button onClick={functionName}>Click Me</button <br/>
 passing argument -<br/>
 functionName(argument) => body<br/>
 <button onClick={() => functionName(argument)}>Click Me</button><br/>
@@ -65,7 +65,7 @@ function Garage() {<br/>
   );<br/>
 }<br/>
 const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
-root.render(<Garage >);<br/>
+root.render( Garage />);<br/>
 <br/>
 list with key -<br/>
 function Name(props) {<br/>
@@ -78,8 +78,8 @@ function Trees() {<br/>
     {id:3, name : "Lemon Tree"},<br/>
     {id:4, name : "Apple Tree"},<br/>
   ];<br/>
-  return(trees.map((tree) => <Name id={tree.id} name={tree.name}/>));<br/>
+  return(trees.map((tree) => Name id={tree.id} name={tree.name}/>));<br/>
 }<br/>
 const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
-root.render(<Trees >);<br/>
+root.render(Trees />);<br/>
 <br/>
