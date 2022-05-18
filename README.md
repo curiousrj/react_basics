@@ -1,15 +1,14 @@
 # react_basics
 create app -<br/><br/>
-npx create-react-app appName<br/>
+`npx create-react-app appName`<br/>
 run app -<br/>
-npm start<br/>
+`npm start`<br/>
 <br/>
 render html -<br/>
-root is a html id<br/>
-const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
+`const root = ReactDOM.createRoot(document.getElementById('root'));<br/>
 root.render(<br/>
 content<br/>
-);<br/>
+);`<br/>
 <br/>
 jsx rules -<br/>
 expressions inside curly bracket<br/>
