@@ -96,3 +96,33 @@ function Trees() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Trees />);
 ```
+### inline css -
+```react
+<h1 style={{color: "red"}}>Hello Style!</h1>
+```
+### property names in camelCase -
+```react
+<h1 style={{backgroundColor: "lightblue"}}>Hello Style!</h1>
+```
+### create css object -
+```react
+const Header = () => {
+  const myStyle = {
+    color: "white",
+    backgroundColor: "DodgerBlue",
+    padding: "10px",
+    fontFamily: "Sans-Serif"
+  };
+  return (
+    <>
+      <h1 style={myStyle}>Hello Style!</h1>
+      <p>Add a little style!</p>
+    </>
+  );
+}
+```
+### css modules -
+module extension .module.css
+```react
+import styles from 'location'
+```
