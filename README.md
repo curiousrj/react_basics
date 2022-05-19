@@ -146,7 +146,7 @@ function App() {
 }
 export default App;
 ```
-### in useStae passing object and updating only one value
+### in useState passing object and updating only one value
 ```react
 import { useState } from "react";
 
