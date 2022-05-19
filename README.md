@@ -12,7 +12,7 @@ npm start
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(content);
 ```
-### jsx rules -<br/>
+### jsx rules -
 expressions inside curly brackets<br/>
 only one parent element<br/>
 large block of html inside parenthesis<br/>
@@ -25,7 +25,7 @@ const myElement =
   </>
 );
 ```
-### components -<br/>
+### components -
 file & component name starts with uppercase<br/>
 #### function components -
 ```react
@@ -36,7 +36,7 @@ function Car(props) {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Car color="red"/>);
 ```
-### props -<br/>
+### props -
 we can use string, variable or object. even all together
 ```react
 componentName argumentName=string/{variable/object}/>
@@ -55,7 +55,7 @@ functionName(argument) => body
 functionName(argument) => console.log(argument.type)
 <button onClick={(event) => functionName(event)}>Click Me</button>
 ```
-### && conditional operator -<br/>
+### && conditional operator -
 if the condition is true the code will execute
 ```react
 {condition && code}
@@ -125,4 +125,51 @@ const Header = () => {
 module extension .module.css
 ```react
 import styles from 'location'
+```
+### hooks -
+react hooks can only called at the top level of function component<br/>
+it cannot be conditional<br/>
+<br/>
+### useState -
+```react
+import { useState } from "react";
+
+function App() {
+  const [color, setColor] = useState("red");
+
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button onClick={() => setColor("blue")}>Blue</button>
+    </>
+  )
+}
+export default App;
+```
+### in useStae passing object and updating only one value
+```react
+import { useState } from "react";
+
+function App() {
+  const [color, setValues] = useState({
+    brand:"Lamborghini",
+    model:"Urus",
+    type:"car",
+    color:"blue"
+  });
+
+  const update = () => {
+    setValues(previousState => {
+      return {...previousState, color:"black"}
+    });
+  }
+
+  return (
+    <>
+      <h1>The {color.brand}'s new {color.model} {color.type}'s {color.color} color looks really good.</h1>
+      <button onClick={update}>Blue</button>
+    </>
+  )
+}
+export default App;
 ```
