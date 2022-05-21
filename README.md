@@ -173,3 +173,28 @@ function App() {
 }
 export default App;
 ```
+### useEffect -
+whenever the component rendered useEffect gets called (even when runs for the first time)
+when the passed value from array changes it gets called
+
+```react
+import React, { useEffect, useState } from "react";
+
+function App() {
+  const [count, setCount] = useState(0);
+  useEffect(() =>{
+    console.log("useEffect called");
+  },[count]);
+
+  const countInc = () => {
+    setCount(count + 1);
+  }
+  return (
+    <React.Fragment>
+  <h1>{count}</h1>
+  <button type='button' onClick={countInc}>Click Me</button>
+  </React.Fragment>
+  )
+}
+export default App;
+```
