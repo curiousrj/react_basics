@@ -174,8 +174,8 @@ function App() {
 export default App;
 ```
 ### useEffect -
-whenever the component rendered useEffect gets called (even when runs for the first time)
-when the passed value from array changes it gets called
+whenever the component is rendered, useEffect gets called (even when runs for the first time)<br/>
+when the passed value from the array changes it gets called
 
 ```react
 import React, { useEffect, useState } from "react";
