@@ -198,3 +198,89 @@ function App() {
 }
 export default App;
 ```
+### useContext -
+used to pass value to the nested child without passing through the nodes
+```react
+import { useState, createContext, useContext } from "react";
+
+const UserContext = createContext();
+
+function App() {
+  const [user] = useState("Jesse Hall");
+
+  return (
+    <UserContext.Provider value={user}>
+      <h1>{`Hello ${user}!`}</h1>
+      <Component2 user={user} />
+    </UserContext.Provider>
+  );
+}
+
+function Component2() {
+  return (
+    <>
+      <h1>Component 2</h1>
+      <Component3 />
+    </>
+  );
+}
+
+function Component3() {
+  return (
+    <>
+      <h1>Component 3</h1>
+      <Component4 />
+    </>
+  );
+}
+
+function Component4() {
+  return (
+    <>
+      <h1>Component 4</h1>
+      <Component5 />
+    </>
+  );
+}
+
+function Component5() {
+  const user = useContext(UserContext);
+
+  return (
+    <>
+      <h1>Component 5</h1>
+      <h2>{`Hello ${user} again!`}</h2>
+    </>
+  );
+}
+
+export default App;
+```
+### useMemo -
+used to prevent rerender for complex function while something changes in component<br/>
+when the passed value from the array changes it gets called
+```react
+import React, { useState } from 'react'
+function App() {
+  const [count, setData] = useState(1)
+  const [item, setItem] = useState(20)
+
+  const newApple=React.useMemo(
+    function appleTime() {
+      console.warn("Hello")
+      return 100 * count;
+    }
+  ,[item])
+  return (
+    <div className="App">
+      <h1>Hooks in React {count}</h1>
+      {newApple}
+      <button onClick={() => setData(count + 1)}>Update State</button>
+      <button onClick={() => setItem(item * 10)}>Update State</button>
+
+    </div>
+  );
+}
+
+export default App;
+```
