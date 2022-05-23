@@ -256,6 +256,36 @@ function Component5() {
 
 export default App;
 ```
+### useReducer -
+to avoid multiple useStates and functions useReducer used<br/>
+in the same function can use multiple operations oby passing different arguments
+```react
+import { useReducer } from 'react';
+function App() {
+  const initialState = 0;
+  const reducer = (state, action) => {
+    switch(action.type) {
+      case "increment":
+        return state + 1;
+      case "decrement":
+        return state - 1;
+      default:
+        break;
+    }
+  }
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return(
+    <>
+    <h1>{state}</h1>
+    <button onClick= {() => {dispatch({type:"increment"})}}>inc</button>
+    <button onClick= {() => {dispatch({type:"decrement"})}}>dec</button>
+    </>
+  );
+}
+
+export default App;
+```
 ### useMemo -
 used to prevent rerender for complex function while something changes in component<br/>
 when the passed value from the array changes it gets called
