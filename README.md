@@ -126,6 +126,27 @@ import { useState } from 'react';
 
 export default App;
 ```
+#### Checkbox -
+```react
+import { useState } from 'react';
+
+ function App() {
+   const [car, setCar] = useState("Tata");
+   const selectHandler = (event) => {
+     setCar(event.target.value);
+   }
+   return(
+     <select value={car} onChange={selectHandler}>
+       <option value="Ford">Ford</option>
+       <option value="Tata">Tata</option>
+       <option value="Tesla">Tesla</option>
+       <option value="Ferrari">Ferrari</option>
+     </select>
+   );
+ }
+
+export default App;
+```
 ### inline css -
 ```react
 <h1 style={{color: "red"}}>Hello Style!</h1>
