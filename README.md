@@ -365,3 +365,53 @@ function App() {
 
 export default App;
 ```
+### custom hook -
+#### App.js -
+```react
+import  useInput  from './useInput'
+ function App() {
+   const [firtsName, bindFirstName, resetFirstName] = useInput("");
+   const [lastName, bindLastName, resetLastName] = useInput("");
+
+   const submitHandler = (event) => {
+     event.preventDefault();
+     alert(`Hello ${firtsName} ${lastName}!`);
+     resetFirstName();
+     resetLastName();
+   }
+
+   return(
+     <form onSubmit={submitHandler}>
+       <div>
+         <label>First Name:</label>
+         <input type="text" {...bindFirstName}></input>
+       </div>
+       <div>
+         <label>Last Name:</label>
+         <input type="text" {...bindLastName}></input>
+       </div>
+       <button>Submit</button>
+     </form>
+   );
+ }
+
+export default App;
+```
+#### useInput.js -
+```react
+import {useState} from 'react';
+function useInput(initialValue) {
+    const [value, setValue] = useState(initialValue);
+    const reset = () => {
+        setValue(initialValue);
+    }
+    const bind = {
+        value,
+        onChange: (e) => {setValue(e.target.value)}
+    }
+
+    return [value, bind, reset];
+}
+
+export default useInput;
+```
