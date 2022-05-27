@@ -337,6 +337,29 @@ function App() {
 
 export default App;
 ```
+#### useReducer multiple state value -
+```react
+import { useReducer } from 'react';
+
+function reduce([fname, lname], action) {
+  if(action.type === "clicked") {
+    fname = "Steve"
+    lname = "Haunt"
+    return [fname, lname];
+  }
+}
+
+ function App() {
+   const [[fname, lname], dispatch] = useReducer(reduce, ["John","Doe"]);
+   return(
+     <>
+     <h1>{fname} {lname}</h1>
+     <button onClick={() => dispatch({type:"clicked"})}>Click Me</button>
+     </>
+   );
+}
+export default App;
+```
 ### useMemo -
 used to prevent rerender for complex function while something changes in component<br/>
 when the passed value from the array changes it gets called
