@@ -309,7 +309,7 @@ export default App;
 ```
 ### useReducer -
 to avoid multiple useStates and functions useReducer used<br/>
-in the same function can use multiple operations oby passing different arguments
+in the same function can use multiple operations by passing different arguments
 ```react
 import { useReducer } from 'react';
 function App() {
