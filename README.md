@@ -507,3 +507,56 @@ class Car extends React.Component {
   }
 }
 ```
+#### getDerivedStateFromProps -
+runs after constructor & fetch data from props<br/>
+props data is not considerable
+```react
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favcolor: "pink"};
+  }
+  static getDerivedStateFromProps(props, state) {
+    return {favcolor: props.color };
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favcolor}</h1>
+    );
+  }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Header color="red"/>);
+```
+#### render() -
+calls after getDerivedStateFromProps
+```react
+class Car extends React.Component {
+  render() {
+    return <h2>Hi, I am a Car!</h2>;
+  }
+}
+```
+
+#### componentDidMount -
+```react
+import React from "react";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {color : "pink"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({color: "violet"})
+    }, 2000);
+  }
+  render() {
+    return <h1>Hello {this.state.color} World!</h1>;
+  };
+}
+export default App;
+
+```
