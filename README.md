@@ -687,3 +687,24 @@ class Child extends React.Component {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Container />);
 ```
+### react router -
+#### install react router -
+```react
+npm install react-router-dom
+```
+#### defining path -
+```react
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/*" element={<Page404 />} />
+  </Routes>
+</BrowserRouter>
+```
+#### defining link -
+```react
+<Link to="/">Home</Link>
+<Link to="/about">About</Link>
+```
