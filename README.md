@@ -708,3 +708,30 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 <Link to="/">Home</Link>
 <Link to="/about">About</Link>
 ```
+### 404 page -
+```react
+<Route path="/*" element={<Page404 />} />
+```
+#### redirect / navigate -
+```react
+<Route path="/*" element={<Navigate to="/" />} />
+```
+#### params -
+```react
+<Route path="user/:name" element={<User />} />
+
+<li><Link to="/user/anil">Anil</Link></li>
+<li><Link to="/user/peter">Peter</Link></li>
+
+import React from 'react'
+import { useParams } from 'react-router-dom'
+
+export default function User() {
+    const params = useParams();
+    console.log(params);
+    const {name} = params;
+  return (
+    <h1>This is {name}'s page</h1>
+  )
+}
+```
