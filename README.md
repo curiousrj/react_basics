@@ -755,3 +755,32 @@ used to define statement & argument inside link
   color:aqua;
 }
 ```
+#### useSearchParams -
+```react
+import { useSearchParams } from 'react-router-dom'
+
+const [searchParams, setSearchParams] = useSearchParams();
+return (
+      <>
+      <h1>Name: {searchParams.get("name")}</h1>
+      <input type="text" onChange={(e) => setSearchParams({text: e.target.value})}/>
+      </>
+  )
+```
+#### on click & conditional routing -
+```react
+import { useNavigate } from 'react-router-dom';
+
+export default function Home() {
+  const navigate = useNavigate();
+  const redirect = (url) => {
+    navigate(url);
+  }
+  return (
+    <>
+    <button onClick={() => {redirect('/about')}}>Go to About Page</button>
+    <button onClick={() => {redirect('/filter')}}>Go to Filter Page</button>
+    </>
+  )
+}
+```
