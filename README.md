@@ -735,3 +735,23 @@ export default function User() {
   )
 }
 ```
+#### navLink - 
+used to define statement & argument inside link
+```react
+<NavLink className="nav-link" to="/about">About</NavLink>
+```
+#### style in link (active link) -
+```react
+<li><NavLink className="nav-link" style={({isActive}) => {return {color: isActive ? "aqua" : ""}}} to="/">Home</NavLink></li>
+
+.nav-link {
+  color:#282c34;
+  text-decoration: none;
+}
+
+<li><NavLink className="nav-link active" to="/">Home</NavLink></li>
+
+.active {
+  color:aqua;
+}
+```
