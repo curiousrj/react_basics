@@ -767,7 +767,7 @@ return (
       </>
   )
 ```
-#### on click & conditional routing -
+#### on click & conditional routing (useNavigate) -
 ```react
 import { useNavigate } from 'react-router-dom';
 
@@ -783,4 +783,72 @@ export default function Home() {
     </>
   )
 }
+```
+#### nested routing -
+```react
+<Route path="/contact" element={<Contact />} >
+  <Route path="/contact/company" element={<Company />}/>
+</Route>
+
+<>
+<h1>Contact Page</h1>
+<Link to="/contact/company">Company</Link>
+<Outlet />
+</>
+```
+### useLocation hook -
+```react
+import { Link, useLocation } from 'react-router-dom'
+const location = useLocation();
+console.log(location);
+```
+passing state -
+```react
+<NavLink className="nav-link" to="/contact" state={{name: "rj", message: "Hello"}}>Contact</NavLink>
+```
+###protected routing -
+app.js
+```react
+<Route path="/" element={<Protected Component ={Home} />} />
+```
+protected.js
+```react
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+export default function Protected(props) {
+    const navigate = useNavigate();
+    const {Component} = props;
+    useEffect(() => {
+        let login = localStorage.getItem('login');
+        if (!login) {
+            navigate("/login")
+        }
+    })
+  return (
+      <Component />
+  )
+}
+
+```
+login.js
+```react
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
+export default function Login() {
+
+    const navigate = useNavigate()
+    const login = () => {
+        localStorage.setItem('login', true);
+        navigate("/");
+    }
+  return (
+    <>
+    <h1>Login Page</h1>
+    <button onClick={login}>Login</button>
+    </>
+  )
+}
+
 ```
