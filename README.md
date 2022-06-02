@@ -716,7 +716,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 ```react
 <Route path="/*" element={<Navigate to="/" />} />
 ```
-#### params -
+#### useParams -
+get query from link
 ```react
 <Route path="user/:name" element={<User />} />
 
@@ -756,6 +757,7 @@ used to define statement & argument inside link
 }
 ```
 #### useSearchParams -
+set query to link
 ```react
 import { useSearchParams } from 'react-router-dom'
 
